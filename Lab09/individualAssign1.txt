@@ -1,0 +1,90 @@
+1. Line 7 - addi $s0, $0, -15 | I - Format
+	    addi $rt  $rs  imm
+
+Bits:	   6	 5	 5	     16
+	opcode	rs	rt	immediate
+Hex:	0x8   	0 	10	   -15 (0xfffffff1)
+					Using 2's Complement (represent neg number)
+
+Bin:	001000 00000 10000 1111111111110001 - In I - Format
+
+Bin:  0010 0000 0001 0000 1111 1111 1111 0001 - 4 bits
+      
+Hex:    2    0    1   0     f    f    f    1
+
+In I - Format:
+	op     rs    rt         immediate
+      001000 00000 10000  1111 1111 1111 0001
+	0x8 | 0x0 |  0x10(16) |	-15   
+
+Intsrct: addi $s0, $0, -15
+
+
+2. Line 14 - slt $t0, $s0, $s1 | R - Format
+	     slt $rd  $rs  $rt
+ 
+Bits:	  6	5	5	5  	5		6
+	opcode	rs	rt	rd	shamt		funct
+Hex:	0x0   0x10(16) 0x11(17) 0x08(8) 0x0(no shift) 0x2a
+
+Bin:	000000 | 10000 | 10001 |  10000 | 00000 | 101011 in R - Format
+
+Bin:  	0000 0010 0001 0001 1000 0000 0010 1011 - 4 bits
+
+Hex:	  0    2    1    1    4    0    2    a
+
+In R - Format: 000000 | 10000 | 10001 |  10000 | 00000 | 101011
+		 op	  rs      rt       rd    shamt    funct
+Hex:		0x0      0x10(16) 0x11(17) 0x08(8) 0x0      0x2a
+
+Intsrct:	slt $8, $16, 17
+		slt $t0, $s0, $s1 
+
+
+3. Line 17 - beq $t0, $zero, LEEQ | I - Format
+
+Bits:	6	5	5	     16
+	opcode	rs 	rt	 immediate
+Hex:	0x4	0x8	0x0	(0x00400030 - 0x00400018)/4 = 0x24/4 = 0x6
+
+Bin:	0001 0001 0000 0000 0000 0000 0000 0110 - 4 bits
+Hex:	  1    1    0    0    0    0    0    6
+
+In - I - Format:
+	000100 01000 00000 0000000000000110
+	   op    rs     rt        immediate
+Hex:      0x4    0x8(8) 0x0(0) 	   0x6
+
+	beq $8, $0, (PC + 1 + 6)
+	beq $t0, $0, (0x00400018 + 1*4 + 6*4) = 0x00400030
+	beq $t0, $0, LEEQ 
+
+Hex:
+
+4. Line 20 - j GRT | J - Format
+Bits:	   6    	  26
+	opcode		address
+Hex:  	0x2		0x0040001c
+
+Bin:	000010 | 00 0001 0000 0000 0000 0000 0111
+	   op		address
+
+Bin:	0000 1000 0001 0000 0000 0000 0000 0111 - 4 bits
+Hex:	 0     8    1    0    0    0    0    7
+
+In J - Format:
+	000010 | 00000100000000000000000111
+
+Adjust address:
+From: 0000 0100 0000 0000 0000 0001 11
+To: 0000 0000 0100 0000 0000 0000 0001 1100
+Hex: 0    0    4    0    0    0    1    c
+
+Label of Address: GRT
+
+Instr: j GRT
+
+	
+
+
+

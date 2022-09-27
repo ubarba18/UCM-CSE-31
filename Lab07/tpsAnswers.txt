@@ -1,0 +1,37 @@
+TPS 1:
+
+1. The difference between the terms are that: procedures are functions that don't return anything, methods are functions of an object, and functions return values.
+
+2.
+
+3.
+
+4. The line number is 20, it adds the two input arguments into a register.
+
+5. Yes, we  can since a label is being created for that line.
+
+6. At line 11, in the $ra register. The value of address being saved is 0, which doesn't make sense. 
+
+7. The program has an error.
+
+8. The adress the program should return to from sum is the line after the first jump was called. 
+
+9. The return address should be correct. It was saving adress 0 which is wrong, instead of the line after the jump, 0x00400028.
+
+10. The return address is the same. The output is 15.
+
+11. We should use jal instead, to save the return address in $ra to return where we were at.
+
+TPS 2:
+
+1. The output will be 38. y = 5 + 10 + (sum(5)= 5 + (sub(15 + 5) = 20-2)) y = 15 + (5 + 18) = 38.
+
+2. The MIPS version will loop infinitely.
+
+3. Jal was used to jump to SUM, and save the return address, the line after Jal, to $ra. But then we use jal again in sum to go to SUB, replacing the original return adress in main, to one in SUM. Making the code loop.
+
+4. WWe could resolve this by storing it in the top of stack.
+
+5. Line 25 stores the value of m in $s0, overwriting the value of x. This is a problem as we need the value of x later on.
+
+6.

@@ -1,0 +1,45 @@
+TPS Activity 1
+1. Group Members: George Chong, Kianna Ng
+
+2. Online Tutorials for GDB:
+2.b https://www.tutorialspoint.com/gnu_debugger/installing_gdb.htm
+2.c https://u.osu.edu/cstutorials/2018/09/28/how-to-debug-c-program-using-gdb-in-6-simple-steps/
+2.d https://www.classes.cs.uchicago.edu/archive/2017/winter/51081-1/LabFAQ/lab2/gdb.html
+
+3. Shared Tutorials:
+https://www.youtube.com/watch?v=u6iXfpBDU3w
+https://www.geeksforgeeks.org/gdb-step-by-step-introduction/
+https://u.osu.edu/cstutorials/2018/09/28/how-to-debug-c-program-using-gdb-in-6-simple-steps/
+-https://lldb.llvm.org/use/tutorial.html
+-
+-
+
+
+TPS Activity 2
+1. Compile it with the -g option, gcc -g punishment.c -o punish. To compile our punishment.c with an executable named punish.
+
+2. You load it in GDB by using the command, gdb punish, with the name of your executable.
+
+3. Once its loaded you need to run it by using the run command, run [args], and continue until the set breakpoint.
+
+4. Breakpoints are a way to pause the GDB debugger where you suspect errors would be. You set up a breakpoint at a certain line by doing the command, break [line_number].
+
+5. You run it line by line by doing , run, to continue the code.
+
+6. print {variable}
+
+7. To finish running use , c or continue
+
+8. quit.
+
+TPS Activity 3
+1. Two variables were declared, x and y, and two pointers, px and py.
+
+2. The values of x, y, and arr[0] are assigned random memory to these variables, x = 0 y = 43 and arr[0] = 2007765952 each time we run they are assigned different values. 
+
+3. You can prevent x, y, and arr from having this issue by initializing them to 0.
+
+7. array name is not read only.
+
+8. The result does make sense because the adress of arr is pointing to the first index of the array, arr[0];
+

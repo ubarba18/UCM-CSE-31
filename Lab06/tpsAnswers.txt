@@ -1,0 +1,34 @@
+TPS 1
+1. The starting adresses in hexadecimal are: Text Segment - 0x00400000 and Datasegment - 0x10010000.
+
+2. Basic Assembly has more instructions and lines, while True Assembly language uses register names and labels that are more easier readible and uses the names of the registers that are swapped.
+
+3. There is a 32-byte difference between the two address locations.
+
+4. Each address location has 8 columns.
+
+5. That each column has a difference of 4 bytes. 8*4 = 32byte.
+
+6. By doing, m: .word 20
+
+7. The address of the value of m is stored at: 0x100100004.
+
+8. By setting a label to a string by using the ".asciiz", such as - str1: .asciiz "I love CSE31!".
+
+9. Str1 is stored in adresses: 0x10010008 -> 0x1001000c -> 0x10010010.
+
+10. It does agree.
+
+11. We could do this by:
+la a0, str1     #Loads address of the str1 into the a0 register
+li v0, 4        #Load integer 4 into v0, since in system code 4 means print string.
+syscall 	#Looks into register v0, and does the action onto a0. Print a0.
+
+12. "la $t3, n", stores the address of label 'n' into the register $t3. But in order to get the value we must do lw $t3 0($t3) to load the actual value at the address of n.
+
+TPS 2
+
+1. There would be too many instructions using up opcodes making the processor run slower. Helps make the processor
+run smoother.
+
+4. By performing li $v0, 5, when wanting to read an int.

@@ -1,0 +1,18 @@
+Assignment 1:
+
+1. Line 18 causes the segmentation fault.
+
+2. When using scanf, we need to place an '&' infront of the variable to store it in its address.
+
+3. The bug is that sum is not being updated outside of the method, read_values. So when we go to print it, it is still 0.
+
+4. To fix this, we just need to make the parameter of read_values to be the adress of sum rather than just the variable.
+
+Assignment 2:
+
+1. The output is expected. "Hi!hi!"
+
+2. The output is not as expected. The bug is that the string are still have the previous input saved.
+
+3. The output is not expected. This happens because "Hello! How are you?" is greater than the memory allocated in the str1[10] so the compiler hands it extra memory. Then
+When we do str2 it begins it overlaps the memory of str1 with str2.

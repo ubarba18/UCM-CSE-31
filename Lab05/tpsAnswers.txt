@@ -1,0 +1,33 @@
+TPS 1:
+
+1.MARS stands for, MIPS Assembler and Runtime Simulator.
+
+4a. You load an assembly file by going to the 'File' tab, 'Open', and select the file.
+
+4b. Assemble the file  by pressing the wrench and screw button.
+
+4c. You run the file after assembling the file by pressing the green play button to the right of 'Assemble'.
+
+4d. You cannot run a file before assembling.
+
+4e. To run line by line press the green play button that has a 1 that is to the right of the regular 'Run'.
+
+4f. After running to run again you need to press the 'Rewind' button, that is the green button with 2 left arrows. 
+
+TPS 2:
+1. The 3 directives; .data starts a data declaration, .word is the size of the data, and .text is the instructions.
+
+2.It connects to Line 17 if the fib has run n times.
+
+3. Line 15 jumps back to fib.
+
+4. You set a breakpoint by going to, 'Execute' then 'Text_Segment' then check the 'Bkpt' box at whichever line to set the breakpoint.
+
+5. You continue by clicking 'Run' again.
+
+6. You can find the content of a register to the right of the MARS app. You can manually modify the value of a register by clicking on 
+the target register and setting it to a value.
+
+7. The address of 'n' is stored in the Data Segment with the address of 0x10010000
+
+8. Syscall is used to either print or exit the program. If a 10 is passed it will exit and if it is passed a 1 it will print.

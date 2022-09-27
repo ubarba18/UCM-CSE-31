@@ -1,0 +1,26 @@
+TPS 1
+1. The 3 pools for memory are static - global variables, stack - local variables, and heap - dynamically allocated variables.
+
+2a. Three variables are declared; num, *ptr, and **header.
+
+2b. Two of them are pointers (ptr and header). Each points to a int data.
+
+2c. These variables are stored in the stack.
+
+2d. The pointer ptr will point to the heap pool memory.
+
+3. 
+
+TPS 2
+
+1. The program creates a node that stores two values (int and float) with pointer to the next node.
+
+3. From the addresses printed structures are stored in the heap while the head pointer is in the stack. The relationship is that the head pointer
+from the stack points to the adress allocated in the heap for its members.
+
+Assignment 1
+1a. We must pass the size of the array so the function is aware of so it sorts the entirety of the array not more or less than its size.
+
+1b. The original is not being changed because we copy the original, sort and return the copy.
+
+1c. We need s_array because main wants to print the original array and then the bubblesorted array.

@@ -1,0 +1,25 @@
+TPS 1
+
+2. I expect the program to print 2 for four_ints[0].
+
+4. It prints out 2. No since we set every index in four_ints[size] = 2.
+
+5a. We allocated only 1 array.
+
+5b. Yes they both point to the same address.
+
+5c. Checked!
+
+6. The difference between addresses is by 4 bytes. This is allocated by for each int.
+
+8. The difference between addresses is by 1 byte. For char, they only have 1 byte unlike ints which are 4 bytes.
+
+10. For the first index, they point to the same address, but after increment the ints are 4 bytes apart while chars are 1 byte apart.
+
+TPS 2
+
+1. Line 8, It allocated memory for a double pointer.
+
+2. We would need to incrememnt the pointer until it reaches i.
+
+4. We need the size so we don't go out of bounds.

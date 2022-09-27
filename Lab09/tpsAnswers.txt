@@ -1,0 +1,106 @@
+TPS 1
+Collab: Kyle, Seth
+1.
+
+2.
+
+3.
+ 
+4. Each machine intruction contains 32-bits.
+
+5. There are 3 different types: R format - Arithmetic instructions, I format - Branch, transfer and immediate instructions,
+and J format - Jump instructions.
+
+R Format Example: add savesto[$] [$] + [$], sub savesto[$] [$] - [$]
+
+I format Example: beq [$] [$] does[], bne [$] [$] does[]
+
+J format Example: jal [address], j [address]
+
+6a. Line 7 is instruction type, I format. It has 4 fields: op rs rt address/immediate.
+
+6b. The value of the opcode in hex is 8. Rs is register is $zero, the value of the register in hex is 0x00000000. Rt is register $s0, the value of this register in hex is 16. The value of the immediate
+in hex is 0x00000019.
+
+6c.
+				  25
+Hex: 	   8     0    0x19	11001
+Binary: 001000 00000 10000 0000000000011001 -  I  Format
+	opcode  rs     rt     immediate
+	0010 0000 0001 0000 0000 0000 0001 1001 
+    
+Decimal:  2    0    1    0    0    0    1    9
+
+7a. Each letter/number represents 4-bits.
+Machine Code: 0x0230402a
+
+	
+
+Binary:	000000 10001 10000 01000 00000 101010- R format
+	   op    rs    rt    rd  shamt  function
+
+7b. From the binary machine code, it is in R format, you can tell by how its broken into. There are 6 fields.
+The name of these fields are:
+-op: basic operation of the instruction
+-rs: first source operand register
+-rt: second source operand register
+-rd: destination operand register
+-shamt: shift amount
+-funct: selects the specific variant of the opcode (function code)
+
+7c. The value of each field in hex is:
+    00 0000  |  1 0001 | 1 0000 | 0 1000 | 0 0000 | 10 1010
+Hex:  60 	 11        10       08       00        2a
+Registers to Dec: 17	   16	     8	
+
+
+7d. The operation in this instruction is Set less than (stl), you can tell because the our opcode is 0 and function 2a
+which aligns with stl, 0/2a in hex.
+
+7e. The final MIPS instruction then should be:
+	slt $t0, $s1, $s0
+
+8a. Line 17 is in the I - format.
+
+8b. The values in hex of the opcode is 5, rs is 8, and rt is 0.
+
+8c. The name of the target if it takes the branch is LESS. The address of this label is 0x0040001c.
+
+8d. No, since there is no way to store a 32 bit address exactly inside of a 16 bit field.
+
+8e. The immediate field is the (address value - the address of the next instruction)/4. 
+
+8f. 
+Hex:		5	8	0	(0x0040001c - 0x00400014+4)/4 = 0x00000004/4 = 0x1
+Binary:	     000101   01000   00000	0000000000000001
+
+	    op	     rs        rt         immediate
+	 00 0101 | 0 1000 | 0 0000 | 0000 0000 0000  0001
+Hex:       1          5     0   0      0    0     0     1	
+
+9a. Line 17, is in J format. opcode | address
+
+9b. The value in hex for the op code is 0x2.
+
+9c. It will jump to the label 'GREG', and its address is 0x00400030
+
+9d. You have 26 bits in the field to store the 32 bit address, 0x00400030. This can be done by adding 4 zeros at the start
+and 2 zeros at the end of the address.
+
+Binary: 0000 0100 0000 0000 0000 0011 00 - 26 bits
+
+Adding 4 zeros at the start to place the high-order four bits from pc:
+
+Binary: 0000 0000 0100 0000 0000 0000 0011 00 - 30 bits
+
+Adding 2 zeros at the end to shift left two positions:
+
+Binary: 0000 0000 0100 0000 0000 0000 0011 0000 - 32 bits
+
+
+9e. The address field in binary is :
+0000 1000 0001 0000  0000 0000 0000 1100
+  0    8    1    0     0    0   0     c
+and for hex:
+
+0x0810000c
